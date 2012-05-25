@@ -1,7 +1,15 @@
 Notesbook::Application.routes.draw do
+
+  get "users/index"
+
+  get "users/new"
+
   resources :notes
   resources :categories
-  # The priority is based upon order of creation:
+  
+ match '/signup',  to: 'users#new'
+ 
+   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
