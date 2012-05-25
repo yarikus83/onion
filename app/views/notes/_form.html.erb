@@ -1,0 +1,14 @@
+<%= form_for @note do |f| %>
+<%= f.label :header, "заголовок" %>
+<%= f.text_field :header %><br />
+
+<%= f.label :body, "текст" %>
+<%= f.text_area :body %><br />
+
+<%= f.label :category_id %>
+<%= f.collection_select :category_id, Category.order(:title).all, :id, :title %>:
+
+<%= f.submit %>
+
+<% end %>
+

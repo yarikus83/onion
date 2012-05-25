@@ -1,0 +1,31 @@
+<title> index </title>	
+<% if @notes %>
+
+<h1>All Notes</h1>
+
+<div class="main">
+<table>
+<tr>
+  <th>Header</th>
+  <th>Title</th>
+  <th>Category</th>
+</tr>
+
+<% @notes.each do |note| %>	
+
+<tr>
+<td><%= note.header %></td>
+<td><%= note.body %></td>
+<td><%= note.category.title %></td>
+<td><%=link_to "Edit", edit_note_path(note)%></td>
+<td><%=link_to "Delete", note, :method => :delete, :confirm => "delete note?"%>
+
+</tr>
+<% end %>
+</table>
+</div>
+
+<% end %>
+<br>
+<%= render :partial => "form" %>
+</br>
