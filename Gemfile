@@ -13,6 +13,10 @@ gem 'annotate', '2.4.1.beta1'
 gem 'rspec-rails'
 end
 
+group :test do
+  gem 'capybara', '1.1.2'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
